@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<record_update table="sys_script_include">
-  <sys_script_include action="INSERT_OR_UPDATE">
-    <access/>
-    <active>true</active>
-    <api_name>SalaryService</api_name>
-    <caller_access/>
-    <client_callable>true</client_callable>
-    <description>薪资系统_薪资服务</description>
-    <name>SalaryService</name>
-    <script>var SalaryService = Class.create();
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access/>
+        <active>true</active>
+        <api_name>x_yunji_jet_04.SalaryService</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>薪资系统_薪资服务</description>
+        <name>SalaryService</name>
+        <script><![CDATA[var SalaryService = Class.create();
 SalaryService.prototype = {
   initialize: function(){
   },
@@ -24,9 +23,9 @@ SalaryService.prototype = {
         result.message="未查询到社保信息";
         gr.setValue("employee",data.employeeId);
         var updateData=false;
-        for(i=0;i&lt;cols.length;i++){
+        for(i=0;i<cols.length;i++){
           var val=data[cols[i]];
-          if(val!=null&amp;&amp;val&gt;=0){
+          if(val!=null&&val>=0){
               gr.setValue(cols[i],val);
               updateData=true;
           }
@@ -44,9 +43,9 @@ SalaryService.prototype = {
       }else{
         result.message="查询到社保信息";
         var updateData=false;
-        for(i=0;i&lt;cols.length;i++){
+        for(i=0;i<cols.length;i++){
           var val=data[cols[i]];
-          if(val!=null&amp;&amp;val&gt;=0){
+          if(val!=null&&val>=0){
               gr.setValue(cols[i],val);
               updateData=true;
           }
@@ -96,14 +95,14 @@ SalaryService.prototype = {
             if(create){
               gr.setValue("employee",data.employeeId);
               gr.setValue("monthly_list",monthId);
-              for(i=0;i&lt;cols.length;i++){
+              for(i=0;i<cols.length;i++){
                 gr.setValue("before_"+cols[i],bs.getValue(cols[i]));
               }
             }
     
-            for(i=0;i&lt;cols.length;i++){
+            for(i=0;i<cols.length;i++){
               var val=data[cols[i]];
-              if(val!=null&amp;&amp;val&gt;=0){
+              if(val!=null&&val>=0){
                 gr.setValue(cols[i],val);
                 updateData=true;
               }
@@ -136,19 +135,18 @@ SalaryService.prototype = {
       return result;
   },
   type: 'SalaryService'
-};</script>
-    <sys_class_name>sys_script_include</sys_class_name>
-    <sys_created_by>jiaohuizhe</sys_created_by>
-    <sys_created_on>2022-04-28 11:27:23</sys_created_on>
-    <sys_effective/>
-    <sys_id>bb60f5c5b2bc47439af175f5bed8d0fd</sys_id>
-    <sys_mod_count>1</sys_mod_count>
-    <sys_name/>
-    <sys_package/>
-    <sys_policy/>
-    <sys_scope>0a73f96002524301a75a553e883ef21b</sys_scope>
-    <sys_update_name/>
-    <sys_updated_by>jiaohuizhe</sys_updated_by>
-    <sys_updated_on>2022-04-29 08:17:17</sys_updated_on>
-  </sys_script_include>
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>jiaohuizhe</sys_created_by>
+        <sys_created_on>2022-04-28 11:27:23</sys_created_on>
+        <sys_id>bb60f5c5b2bc47439af175f5bed8d0fd</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>SalaryService</sys_name>
+        <sys_package display_value="薪资自动化计算系统" source="NULL">0a73f96002524301a75a553e883ef21b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="薪资自动化计算系统">0a73f96002524301a75a553e883ef21b</sys_scope>
+        <sys_update_name>sys_script_include_bb60f5c5b2bc47439af175f5bed8d0fd</sys_update_name>
+        <sys_updated_by>jiaohuizhe</sys_updated_by>
+        <sys_updated_on>2022-04-29 08:17:17</sys_updated_on>
+    </sys_script_include>
 </record_update>

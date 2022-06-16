@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<record_update table="sys_script_include">
-  <sys_script_include action="INSERT_OR_UPDATE">
-    <access/>
-    <active>true</active>
-    <api_name>AttendanceAmountCalculation</api_name>
-    <caller_access/>
-    <client_callable>false</client_callable>
-    <description>薪资系统_考勤金额计算</description>
-    <name>AttendanceAmountCalculation</name>
-    <script>var AttendanceAmountCalculation = Class.create();
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access/>
+        <active>true</active>
+        <api_name>x_yunji_jet_04.AttendanceAmountCalculation</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>薪资系统_考勤金额计算</description>
+        <name>AttendanceAmountCalculation</name>
+        <script><![CDATA[var AttendanceAmountCalculation = Class.create();
 AttendanceAmountCalculation.prototype = {
     initialize: function () {
     },
@@ -136,9 +135,9 @@ AttendanceAmountCalculation.prototype = {
             if(bs.next()){
                 var cols=["salary","meal_allowance","compute_allowance","phone_allowance","other_allowance"]
                 var checkAr=false,checkBs=false;
-                for (var colidx=0;colidx&lt;cols.length;colidx++) {
+                for (var colidx=0;colidx<cols.length;colidx++) {
                     var col=cols[colidx];
-                    if(ar.getValue(col)!=null&amp;&amp;ar.getValue(col)!==bs.getValue(col)){
+                    if(ar.getValue(col)!=null&&ar.getValue(col)!==bs.getValue(col)){
                         if(!ar.getValue("before_"+col)){
                             ar.setValue("before_"+col,bs.getValue(col));
                             checkAr=true;
@@ -168,9 +167,9 @@ AttendanceAmountCalculation.prototype = {
             if(ss.next()){
                 var cols=["social_security","housing_provident_fund"]
                 var checkSsr=false,checkSs=false;
-                for (var colidx=0;colidx&lt;cols.length;colidx++) {
+                for (var colidx=0;colidx<cols.length;colidx++) {
                     var col=cols[colidx];
-                    if(ssr.getValue(col)!=null&amp;&amp;ssr.getValue(col)!==ss.getValue(col)){
+                    if(ssr.getValue(col)!=null&&ssr.getValue(col)!==ss.getValue(col)){
                         if(!ssr.getValue("before_"+col)){
                             ssr.setValue("before_"+col,ss.getValue(col));
                             checkSsr=true;
@@ -180,9 +179,9 @@ AttendanceAmountCalculation.prototype = {
                     }
                 }
                 cols=["endowment_insurance", "medical_insurance", "unemployment_insurance", "maternity_insurance", "employment_injury_insurance", "serious_illness_insurance", "housing_provident_fund"];
-                for (var colidx=0;colidx&lt;cols.length;colidx++) {
+                for (var colidx=0;colidx<cols.length;colidx++) {
                     var col=cols[colidx]+"_paid";
-                    if(ssr.getValue(col)!=null&amp;&amp;ssr.getValue(col)!==ss.getValue(col)){
+                    if(ssr.getValue(col)!=null&&ssr.getValue(col)!==ss.getValue(col)){
                         ss.setValue(col,ssr.getValue(col));
                         checkSs=true;
                     }
@@ -265,19 +264,18 @@ AttendanceAmountCalculation.prototype = {
     },
 
     type: 'AttendanceAmountCalculation'
-};</script>
-    <sys_class_name>sys_script_include</sys_class_name>
-    <sys_created_by>xuqingqing</sys_created_by>
-    <sys_created_on>2022-04-27 16:57:53</sys_created_on>
-    <sys_effective/>
-    <sys_id>84a1471207594147905500491b40d494</sys_id>
-    <sys_mod_count>1</sys_mod_count>
-    <sys_name/>
-    <sys_package/>
-    <sys_policy/>
-    <sys_scope>0a73f96002524301a75a553e883ef21b</sys_scope>
-    <sys_update_name/>
-    <sys_updated_by>xuqingqing</sys_updated_by>
-    <sys_updated_on>2022-05-12 14:23:59</sys_updated_on>
-  </sys_script_include>
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>xuqingqing</sys_created_by>
+        <sys_created_on>2022-04-27 16:57:53</sys_created_on>
+        <sys_id>84a1471207594147905500491b40d494</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AttendanceAmountCalculation</sys_name>
+        <sys_package display_value="薪资自动化计算系统" source="NULL">0a73f96002524301a75a553e883ef21b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="薪资自动化计算系统">0a73f96002524301a75a553e883ef21b</sys_scope>
+        <sys_update_name>sys_script_include_84a1471207594147905500491b40d494</sys_update_name>
+        <sys_updated_by>xuqingqing</sys_updated_by>
+        <sys_updated_on>2022-05-12 14:23:59</sys_updated_on>
+    </sys_script_include>
 </record_update>
